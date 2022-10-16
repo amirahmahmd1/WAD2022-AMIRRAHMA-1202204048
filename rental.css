@@ -1,0 +1,10 @@
+#marginkanankiri{
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
+
+.navbar a:hover {
+    background-color: rgb(114, 164, 199);
+    border-radius: 7%;
+}
