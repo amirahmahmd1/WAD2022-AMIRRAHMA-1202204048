@@ -51,7 +51,7 @@
         <br><h5>Start Time</h5>
         <input class="form-control" type="time" placeholder="--:--" aria-label="default input example" name="st">
         <br><h5>Duration (Days)</h5>
-        <input class="form-control" type="number" name="">
+        <input class="form-control" type="number" name="d">
         <br><h5>Car Type</h5>
         <select name="car" class="form-select" aria-label="Default select example">
 

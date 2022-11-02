@@ -45,7 +45,7 @@
         echo $_POST["n"];
       ?>
       </td>
-      <td><?php $bd = strtotime($_GET["bd"] . $_POST["st"]);
+      <td><?php $bd = strtotime($_POST["bd"] . $_POST["st"]);
         echo date('Y-m-d H:i:s', $bd);
       ?></td>
       <td>
@@ -55,7 +55,7 @@
       ?></td>
 
       <td><?php 
-        echo $_POST["cars"];
+        echo $_POST["car"];
       ?></td>
 
       <td><?php 
@@ -78,7 +78,7 @@
     <?php 
       $cars = $_POST["car"];
       $days = $_POST["d"];
-      if(empty($_POST["d"])){
+      if(($_POST["d"])){
         $days = 0;
       }
       if ($cars=="Rush"){
