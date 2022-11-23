@@ -8,88 +8,80 @@
   </head>
 
   <body>
-    <section id="navbar">
-  <nav class="navbar navbar-expand-lg bg-primary ">
-    <div class="container">
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="Home-Amirrahma.php">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="#">MyCar</a>
-        </li>
-        </ul>
-        </div>
-        </div>
-        </section>
-
-        <section id="isieditcar" style="padding-left:60px;margin:60px;">
-        <h1>
-            Ayla
-        </h1>
-        <p>
-        Detail mobil Ayla
-        </p>
-        <div class="container text-center">
-        <div class="row" style="margin-top:50px">
-        <div class="col">
-        <img src="..\asset\ayla.jpg" alt="" style="width:600px">
-        </div>    
-        <div class="col" style="text-align:justify; margin-left:50px" >
-            <h1>
-            Tambah Mobil
-        </h1>
-        <p>
-        Tambah Mobil baru anda ke list show room
-        </p>
-       
-        <div class="mb-3" style="margin-right:20%">
-                <label for="mobil" class="form-label"><h1>Nama Mobil</h1></label>
-                <input type="text" class="form-control" value="Ayla" name="mobil" id="mobil" placeholder="Ayla">
-            </div>
-        <div class="mb-3" style="margin-right:20%">
-            <label for="nama" class="form-label"><h1>Nama Pemilik</h1></label>
-            <input type="text" class="form-control" name="nama" id="nama" value="Amirrahma - 1202204048" placeholder="Amirrahma - 1202204048">
-        </div>
-        <div class="mb-3" style="margin-right:20%">
-            <label for="merk" class="form-label"><h1>Merk</h1></label>
-            <input type="text" class="form-control" name="merk" id="merk" value="Daihatsu" placeholder="Daihatsu">
-        </div>
-        <div class="mb-3" style="margin-right:20%">
-            <label for="tanggal" class="form-label"><h1>Tanggal Beli</h1></label>
-            <input type="date" class="form-control" name="tanggal" id="tanggal">
-        </div>
-        <div class="mb-3" style="margin-right:20%">
-            <label for="deskripsi" class="form-label"><h1>Deskripsi</h1></label>
-            <textarea type="text" class="form-control" name="deskripsi" id="deskripsi" style="height:140px" placeholder="The first all-electric Gran Coupé, the BMW i4 delivers outstanding dynamics with 
-a high level of comfort and the ideal qualities to make it your daily driver. 
-The five-door model comes equipped with fifth-generation BMW eDrive technology for sporty performance figures – reaching up to 340 hp.
-With a long range of up to 591 kilometres* and five spacious full-sized seats,
-it is the perfect companion for any journey."></textarea>
-        </div>
-        <div class="mb-3" style="margin-right:20%">
-            <label for="foto" class="form-label"><h1>Foto</h1></label>
-            <input type="file" class="form-control" name="foto" id="foto">
-        </div>
-        <h1>Status Pembayaran</h1>
+  <?php 
+    include 'config/connector.php';
+    $id = $_GET['id'];
+    $result = mysqli_query($conn, "SELECT * FROM table_user WHERE id_mobil=$id");
+    $read = mysqli_fetch_assoc($result);
+  ?>
+    <section>
+      <div class="container text-justify" style="margin-top:60px">
+      <div class="row">
+      <div class="col">
+          <h1>
+          <?= $read['nama_mobil'] ?>
+          </h1>
+          <p> detail mobil <b><?= $read['nama_mobil'] ?></b></p>
+          <img src="asset/<?= $read['foto_mobil'] ?>" style="width:450px;padding-top:30px;" alt="">
+      </div>
+      <div class="col">
+        <fieldset disabled="disabled">
+        <form method="post">
+        <div class="mb-3">
+      <label for="mobil" class="form-label">
+        <br><h5>Nama Mobil</h5>
+      </label>
+      <input type="text" class="form-control" value="<?=$read['nama_mobil']?>" name="mobil" id="mobil" placeholder="super-gt">
+    </div>
+        <div class="mb-3">
+      <label for="nama" class="form-label">
+        <h5>Nama Pemilik</h5>
+      </label>
+      <input type="text" class="form-control" value="<?=$read['pemilik_mobil']?>" name="nama" id="nama" placeholder="Novan - 1202201382">
+    </div>
+        <div class="mb-3">
+      <label for="merk" class="form-label">
+        <h5>merk</h5>
+      </label>
+      <input type="text" class="form-control" value="<?=$read['merk_mobil']?>" name="merk" id="merk" placeholder="Super Car">
+    </div>
+        <div class="mb-3">
+      <label for="tanggal" class="form-label">
+        <h5>tanggal beli</h5>
+      </label>
+      <input type="date" class="form-control" value="<?=$read['tanggal_beli']?>" id="tanggal" name="tanggal">
+    </div>
+        <div class="mb-3">
+      <label for="deskripsi" class="form-label">
+        <h5>Deskripsi</h5>
+      </label>
+      <textarea  class="form-control" id="deskripsi" value="" name="deskripsi" style="height:200px"><?php echo $read['deskripsi'] ?></textarea>
+    </div>
+        <div class="mb-3">
+      <label for="foto" class="form-label">
+      <h5>Foto</h5>
+      </label>
+        <input class="form-control" type="file" value="<?=$read['foto_mobil']?>" id="foto" name="foto">
+        <p>Mobil: <b> <?=$read['foto_mobil']?> </b></p>
+    </div>
+        <h5>Status Pembayaran</h5>
         <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="lunas" id="lunas" value="Lunas">
-        <label class="form-check-label" for="inlineRadio1">Lunas</label>
-        </div>
+      <input class="form-check-input" type="radio" value="" name="statusbayar" id="lunas" value="Lunas" checked>
+      <label class="form-check-label" for="lunas">Lunas</label>
+    </div>
         <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="belumlunas" id="belumlunas" value="Belum Lunas">
-        <label class="form-check-label" for="inlineRadio2">Belum Lunas</label>
+      <input class="form-check-input" type="radio" name="statusbayar" id="belumlunas" value="Belum Lunas">
+      <label class="form-check-label" for="belumlunas">Belum Lunas</label>
+    </div>
+    <br>
+    <br>
+    </fieldset>
+      <a class="btn btn-primary booking-cta" href="index.php?page=edit&id=<?= $read['id_mobil'] ?>" name="submit">
+        edit
+      </a>                    
+        </form>
         </div>
-
-        <br><br>
-        <button type="submit" name="submit" class="btn btn-primary">
-        Edit
-        </button>
-        </div>
-        </div>
-        </div>
-
+    </section>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
 </html>

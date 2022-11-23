@@ -8,23 +8,7 @@
   </head>
 
   <body>
-  <section id="navbar">
-  <nav class="navbar navbar-expand-lg bg-primary ">
-    <div class="container">
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="Home-Amirrahma.php">Home</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="#">MyCar</a>
-        </li>
-        </ul>
-        </div>
-        </div>
-        </section>
-
+    
     <section id="isiaddcar" style="padding-left:60px;margin:60px;">
         <h1>
         Tambah Mobil
@@ -33,7 +17,7 @@
         Tambah Mobil baru anda ke list show room
         </p>
 
-        <form action="" method="post">
+        <form action="config/insert.php" enctype="multipart/form-data" method="post"> 
         <div class="mb-3" style="margin-right:20%">
                 <label for="mobil" class="form-label"><h1>Nama Mobil</h1></label>
                 <input type="text" class="form-control" name="mobil" id="mobil" placeholder="Ayla">
@@ -65,19 +49,18 @@ it is the perfect companion for any journey."></textarea>
 
         <h1>Status Pembayaran</h1>
         <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="lunas" id="lunas" value="Lunas">
-        <label class="form-check-label" for="inlineRadio1">Lunas</label>
+        <input class="form-check-input" type="radio" name="statusbayar" id="lunas" value="Lunas" checked>
+        <label class="form-check-label" for="lunas">Lunas</label>
         </div>
         <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="belumlunas" id="belumlunas" value="Belum Lunas">
-        <label class="form-check-label" for="inlineRadio2">Belum Lunas</label>
+        <input class="form-check-input" type="radio" name="statusbayar" id="belumlunas" value="Belum Lunas">
+        <label class="form-check-label" for="belumlunas">Belum Lunas</label>
         </div>
 
         <br><br>
-        <a href="ListCar-Amirrahma.php"><button type="submit" name="submit" class="btn btn-primary">
+        <button type="submit" name="submit" class="btn btn-primary">
             Selesai
-        </button>
-        </a>    
+        </button>  
     </section>
     
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
