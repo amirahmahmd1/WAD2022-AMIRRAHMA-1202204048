@@ -31,19 +31,19 @@
       <label for="mobil" class="form-label">
         <br><h5>Nama Mobil</h5>
       </label>
-      <input type="text" class="form-control" value="<?=$read['nama_mobil']?>" name="mobil" id="mobil" placeholder="super-gt">
+      <input type="text" class="form-control" value="<?=$read['nama_mobil']?>" name="mobil" id="mobil">
     </div>
         <div class="mb-3">
       <label for="nama" class="form-label">
         <h5>Nama Pemilik</h5>
       </label>
-      <input type="text" class="form-control" value="<?=$read['pemilik_mobil']?>" name="nama" id="nama" placeholder="Novan - 1202201382">
+      <input type="text" class="form-control" value="<?=$read['pemilik_mobil']?>" name="nama" id="nama" >
     </div>
         <div class="mb-3">
       <label for="merk" class="form-label">
         <h5>merk</h5>
       </label>
-      <input type="text" class="form-control" value="<?=$read['merk_mobil']?>" name="merk" id="merk" placeholder="Super Car">
+      <input type="text" class="form-control" value="<?=$read['merk_mobil']?>" name="merk" id="merk">
     </div>
         <div class="mb-3">
       <label for="tanggal" class="form-label">

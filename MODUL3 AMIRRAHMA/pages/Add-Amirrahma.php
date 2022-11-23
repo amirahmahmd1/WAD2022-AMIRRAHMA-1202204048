@@ -24,7 +24,7 @@
         </div>
         <div class="mb-3" style="margin-right:20%">
             <label for="nama" class="form-label"><h1>Nama Pemilik</h1></label>
-            <input type="text" class="form-control" name="nama" id="nama" placeholder="Amirrahma - 1202204048">
+            <input type="text" class="form-control" name="nama" id="nama">
         </div>
         <div class="mb-3" style="margin-right:20%">
             <label for="merk" class="form-label"><h1>Merk</h1></label>
